@@ -7,3 +7,6 @@ plugins {
 android {
     namespace = "com.danielwaiguru.shoppy.presentation"
 }
+dependencies {
+    implementation(project(":designsystem"))
+}

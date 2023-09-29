@@ -1,4 +1,4 @@
-package com.danielwaiguru.shoppy.ui.theme
+package com.danielwaiguru.shoppy.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 

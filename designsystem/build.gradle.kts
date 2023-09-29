@@ -9,7 +9,7 @@ android {
 }
 
 dependencies {
-
+    implementation(libs.google.fonts)
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
     implementation(libs.coil.kt)
