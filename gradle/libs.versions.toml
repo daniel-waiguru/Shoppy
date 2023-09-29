@@ -28,6 +28,7 @@ archCore = "2.2.0"
 robolectric = "4.10.3"
 lifecycle = "2.6.1"
 coil = "2.2.2"
+javax = "1"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -70,6 +71,8 @@ kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-
 lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
 lifecycle-livedata-ktx = { module = "androidx.lifecycle:lifecycle-livedata-ktx", version.ref = "lifecycle" }
 lifecycle-viewmodel-ktx = { module = "androidx.lifecycle:lifecycle-viewmodel-ktx", version.ref = "lifecycle" }
+
+javax = { module = "javax.inject:javax.inject", version.ref = "javax" }
 
 junit4 = { group = "junit", name = "junit", version.ref = "junit4" }
 junit4-ext = { module = "androidx.test.ext:junit", version.ref = "junit4Ext" }

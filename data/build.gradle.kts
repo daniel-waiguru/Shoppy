@@ -6,6 +6,9 @@ plugins {
 
 android {
     namespace = "com.danielwaiguru.shoppy.data"
+    buildFeatures {
+        buildConfig = true
+    }
 }
 
 dependencies {
