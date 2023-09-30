@@ -19,7 +19,7 @@ object ProductsScreen: ShoppyDestinations {
     override val route: String
         get() = "com.danielwaiguru.shoppy.presentation.ProductsScreen"
     override val title: Int
-        get() = R.string.products_screen_title
+        get() = R.string.app_name
 }
 
 object ProductInfoScreen: ShoppyDestinations {

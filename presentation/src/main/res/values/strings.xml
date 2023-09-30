@@ -15,4 +15,5 @@
     <string name="quantity">Quantity</string>
     <string name="subtract_quantity_content_desc">Subtract quantity</string>
     <string name="add_quantity_content_desc">Add quantity</string>
+    <string name="app_name">Shoppy</string>
 </resources>

@@ -176,8 +176,7 @@ fun ProductInfoSection(
                 style = MaterialTheme.typography.headlineLarge.copy(
                     fontWeight = FontWeight.ExtraBold
                 ),
-                modifier = Modifier
-                    .padding(top = 6.dp)
+                modifier = Modifier.padding(top = 6.dp)
             )
             SuggestionChip(
                 onClick = {},
