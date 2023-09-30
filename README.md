@@ -1,5 +1,5 @@
 # Shoppy
-A mobile app that shows a list of products and their details in an ecommerce environment  written 100% in Kotlin and Jetpack Compose using Android Jetpack Components.
+A mobile app that shows a list of products and their details in an e-commerce environment  written 100% in Kotlin and Jetpack Compose using Android Jetpack Components.
 ## Prerequisites
 To inspect network requests, run the app, and [Chucker](https://github.com/ChuckerTeam/chucker) will post a notification with all intercepted requests.
 
@@ -46,7 +46,7 @@ To inspect network requests, run the app, and [Chucker](https://github.com/Chuck
 All the dependencies (external libraries) are managed using version catalogs and defined in a single place `gradle/libs.versions.toml` file. This is a scalable approach to manage dependencies and use the same dependency version across all modules.
 
 ## Code Analysis
-This repo uses ktlint, a Kotlin linter, to analyze the codebase, identify potential code style violations, code quality issues, etc.
+This repo uses ktlint, a Kotlin linter, to analyze the codebase, and identify potential code style violations, code quality issues, etc.
 Before every commit, make sure you run the following bash script:
 
 ```shell script
@@ -78,7 +78,7 @@ This module encapsulates complex business logic or simple logic that multiple Vi
 #### Presentation
 Contains views(in this app, Composable) and ViewModels. The views post events to the ViewModel and subscribe to the updated state.
 #### Design System
-Contains reusable UI components that can be reused across various modules
+Contains reusable UI components, Color, Typography, and Theme that can be reused across various modules 
 #### Testing
 This module contains test code, test resources, and test dependencies.
 
