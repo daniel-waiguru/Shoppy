@@ -21,10 +21,14 @@ internal fun Project.configureKotlinAndroid(
             minSdk = 21
             buildTypes {
                 getByName("release") {
-                    isMinifyEnabled = false
+                    isMinifyEnabled = true
                 }
                 getByName("debug") {
-                    isMinifyEnabled = false
+                    isMinifyEnabled = true
+                    proguardFiles(
+                        getDefaultProguardFile("proguard-android-optimize.txt"),
+                        "proguard-rules.pro"
+                    )
                 }
             }
         }

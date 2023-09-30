@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import com.danielwaiguru.shoppy.designsystem.previews.ShoppyPreviews
 import com.danielwaiguru.shoppy.presentation.R
 
@@ -29,7 +30,10 @@ fun ShoppyEmptyView(
             text = title,
             style = MaterialTheme.typography.headlineSmall
         )
-        Text(text = description ?: stringResource(id = R.string.products_will_appear_here))
+        Text(
+            text = description ?: stringResource(id = R.string.products_will_appear_here),
+            textAlign = TextAlign.Center
+        )
     }
 }
 

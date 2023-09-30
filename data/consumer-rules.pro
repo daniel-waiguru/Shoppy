@@ -1,0 +1,1 @@
+-keep class com.danielwaiguru.shoppy.data.models.** {*;}

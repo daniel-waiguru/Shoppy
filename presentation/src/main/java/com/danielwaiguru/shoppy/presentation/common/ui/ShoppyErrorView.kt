@@ -10,6 +10,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import com.danielwaiguru.shoppy.designsystem.previews.ShoppyPreviews
 import com.danielwaiguru.shoppy.presentation.R
 
@@ -27,13 +28,15 @@ fun ShoppyErrorView(
     ) {
         Text(
             text = title,
-            style = MaterialTheme.typography.headlineSmall
+            style = MaterialTheme.typography.headlineSmall,
+            textAlign = TextAlign.Center
         )
         Text(
             text = description ?: stringResource(
                 id = R.string.an_error_occured
             ),
-            modifier = Modifier.testTag("error_description")
+            modifier = Modifier.testTag("error_description"),
+            textAlign = TextAlign.Center
         )
     }
 }
