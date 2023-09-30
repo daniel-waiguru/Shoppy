@@ -31,7 +31,7 @@ class ProductInfoViewModel @Inject constructor(
         }
     }
 
-    private fun getProduct(productId: Int) {
+    fun getProduct(productId: Int) {
         viewModelScope.launch {
             val result = productsRepository.getProduct(productId)
             _productUIState.update { currentState ->

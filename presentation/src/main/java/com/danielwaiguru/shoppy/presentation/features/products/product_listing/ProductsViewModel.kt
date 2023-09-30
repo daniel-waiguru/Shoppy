@@ -26,7 +26,7 @@ class ProductsViewModel @Inject constructor(
         getProducts()
     }
 
-    private fun getProducts() {
+    fun getProducts() {
         viewModelScope.launch {
             productsRepository.getProducts()
                 .collect { result ->

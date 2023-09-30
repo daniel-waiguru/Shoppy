@@ -27,7 +27,7 @@ fun parseErrorBody(throwable: HttpException): ErrorResponse? = try {
     throwable.response()?.errorBody()?.toString()?.let {
         val moshi = Moshi.Builder()
             .build()
-        val jsonAdapter = moshi.adapter(ErrorResponse::class.java)
+        val jsonAdapter = moshi.adapter(ErrorResponse::class.java).lenient()
         jsonAdapter.fromJson(it)
     }
 } catch (e: Exception) {

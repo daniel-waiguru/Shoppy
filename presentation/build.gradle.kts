@@ -10,4 +10,5 @@ android {
 dependencies {
     implementation(project(":designsystem"))
     implementation(libs.accompanist.systemuicontroller)
+    testImplementation(project(":testing"))
 }
