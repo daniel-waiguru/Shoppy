@@ -8,7 +8,7 @@ fun testProduct(
     quantity: Int = 1,
     price: Int = 600
 ) = Product(
-    currencyCode = "alia",
+    currencySymbol = "alia",
     description = "posidonium",
     id = id,
     imageLocation = "commune",

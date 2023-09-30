@@ -5,7 +5,7 @@ import com.danielwaiguru.shoppy.domain.models.Product
 
 internal fun ProductDto.toProduct(): Product =
     Product(
-        currencyCode = currencyCode,
+        currencySymbol = currencySymbol,
         description = description,
         id = id,
         imageLocation = imageLocation,

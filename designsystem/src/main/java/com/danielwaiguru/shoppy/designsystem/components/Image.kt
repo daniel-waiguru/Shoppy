@@ -39,7 +39,7 @@ fun ShoppyAsyncImage(
             .error(R.drawable.no_image_placeholder)
             .build(),
         contentDescription = contentDescription,
-        contentScale = ContentScale.Crop,
+        contentScale = ContentScale.Inside,
         modifier = modifier
             .testTag("shoppy_async_image")
     )
