@@ -121,7 +121,7 @@ fun ProductInfoScreen(
 
             state.errorMessage != null -> {
                 ShoppyErrorView(
-                    description = stringResource(id = R.string.an_error_occured),
+                    description = state.errorMessage,
                     modifier = Modifier
                         .fillMaxSize()
 

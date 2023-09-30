@@ -21,6 +21,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -129,7 +130,8 @@ private fun ProductsGrid(
     products: List<Product>
 ) {
     LazyVerticalGrid(
-        modifier = modifier,
+        modifier = modifier
+            .testTag("products_grid"),
         verticalArrangement = Arrangement.spacedBy(16.dp),
         columns = GridCells.Adaptive(minSize = 128.dp),
         horizontalArrangement = Arrangement.spacedBy(16.dp)
@@ -137,6 +139,7 @@ private fun ProductsGrid(
         items(products, key = Product::id) { product ->
             val clickableModifier = remember(product) {
                 Modifier.clickable { onClick(product.id) }
+                    .testTag("product_item")
             }
             ProductItem(
                 product = product,
