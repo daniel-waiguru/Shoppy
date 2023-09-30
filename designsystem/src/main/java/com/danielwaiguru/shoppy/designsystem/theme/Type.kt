@@ -9,6 +9,7 @@ import androidx.compose.ui.text.googlefonts.Font
 import androidx.compose.ui.text.googlefonts.GoogleFont
 import androidx.compose.ui.unit.sp
 import com.danielwaiguru.shoppy.designsystem.R
+import com.danielwaiguru.shoppy.designsystem.utils.SpDimensions
 
 private val provider = GoogleFont.Provider(
     providerAuthority = "com.google.android.gms.fonts",
@@ -26,7 +27,7 @@ val fontFamily = FontFamily(
 val Typography = Typography(
     titleLarge = TextStyle(
         fontFamily = fontFamily,
-        fontWeight = FontWeight.SemiBold,
+        fontWeight = FontWeight.ExtraBold,
         fontSize = 22.sp,
         letterSpacing = 0.sp,
         lineHeight = 28.sp
@@ -86,5 +87,12 @@ val Typography = Typography(
         fontSize = 12.sp,
         letterSpacing = .15.sp,
         lineHeight = 20.sp
+    ),
+    headlineMedium = TextStyle(
+        fontFamily = fontFamily,
+        fontWeight = FontWeight.Bold,
+        fontSize = SpDimensions.HeadlineMedium,
+        lineHeight = 24.sp,
+        letterSpacing = 0.5.sp
     )
 )

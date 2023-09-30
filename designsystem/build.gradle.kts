@@ -14,4 +14,5 @@ dependencies {
     implementation(libs.appcompat)
     implementation(libs.coil.kt)
     implementation(libs.coil.kt.compose)
+    implementation(libs.shimmer)
 }

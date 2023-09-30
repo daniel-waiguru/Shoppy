@@ -10,5 +10,6 @@ internal fun ProductDto.toProduct(): Product =
         id = id,
         imageLocation = imageLocation,
         name = name,
-        price = price
+        price = price,
+        quantity = quantity
     )

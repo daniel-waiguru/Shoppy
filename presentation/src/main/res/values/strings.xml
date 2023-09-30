@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="products_screen_title">Products Screen</string>
+    <string name="products_info_screen_title">Product Info</string>
+    <string name="error_title">Error!</string>
+    <string name="an_error_occured">Unknown error occurred</string>
+    <string name="no_data_found">No data found!</string>
+    <string name="products_will_appear_here">Products will appear here</string>
+    <string name="no_products_found">No products found!</string>
+    <string name="error_getting_products">A error occurred while trying to get products, try again.</string>
+    <string name="instock_placeholder">%d In Stock</string>
+    <string name="description_title">Description</string>
+    <string name="add_to_cart">Add to Cart</string>
+    <string name="buy_now">Buy Now</string>
+    <string name="quantity">Quantity</string>
+    <string name="subtract_quantity_content_desc">Subtract quantity</string>
+    <string name="add_quantity_content_desc">Add quantity</string>
+</resources>

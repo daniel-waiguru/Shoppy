@@ -31,8 +31,7 @@ fun ShoppyTopAppBar(
     TopAppBar(
         title = {
             Text(
-                text = title,
-                style = MaterialTheme.typography.titleLarge
+                text = title
             )
         },
         modifier = modifier,

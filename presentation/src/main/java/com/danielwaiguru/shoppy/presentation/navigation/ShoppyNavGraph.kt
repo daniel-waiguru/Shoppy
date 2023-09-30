@@ -26,12 +26,12 @@ fun ShoppyNavGraph(
                 }
             )
         }
-//        composable(ProductInfoScreen.route) {
-//            ProductInfoRoute(
-//                onNavBack = {
-//                    navController.popBackStack()
-//                }
-//            )
-//        }
+        composable(ProductInfoScreen.routeWithArgs) {
+            ProductInfoRoute(
+                onNavBack = {
+                    navController.popBackStack()
+                }
+            )
+        }
     }
 }
