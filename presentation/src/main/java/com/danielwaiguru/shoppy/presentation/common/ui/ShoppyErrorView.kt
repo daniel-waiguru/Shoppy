@@ -29,7 +29,12 @@ fun ShoppyErrorView(
             text = title,
             style = MaterialTheme.typography.headlineSmall
         )
-        Text(text = description ?: stringResource(id = R.string.an_error_occured))
+        Text(
+            text = description ?: stringResource(
+                id = R.string.an_error_occured
+            ),
+            modifier = Modifier.testTag("error_description")
+        )
     }
 }
 
