@@ -1,6 +1,5 @@
 package com.danielwaiguru.shoppy.presentation.navigation
 
-import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 import androidx.navigation.NavType
 import androidx.navigation.navArgument
@@ -12,17 +11,18 @@ import com.danielwaiguru.shoppy.presentation.utils.PresentationConstants.PRODUCT
  */
 interface ShoppyDestinations {
     val route: String
+
     @get:StringRes
     val title: Int
 }
-object ProductsScreen: ShoppyDestinations {
+object ProductsScreen : ShoppyDestinations {
     override val route: String
         get() = "com.danielwaiguru.shoppy.presentation.ProductsScreen"
     override val title: Int
         get() = R.string.app_name
 }
 
-object ProductInfoScreen: ShoppyDestinations {
+object ProductInfoScreen : ShoppyDestinations {
     override val route: String
         get() = "com.danielwaiguru.shoppy.presentation.ProductInfoScreen"
 

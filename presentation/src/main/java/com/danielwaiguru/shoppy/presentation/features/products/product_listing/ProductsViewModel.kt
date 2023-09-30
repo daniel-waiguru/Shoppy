@@ -31,7 +31,7 @@ class ProductsViewModel @Inject constructor(
             productsRepository.getProducts()
                 .collect { result ->
                     _productsUIState.update { currentState ->
-                        when(result) {
+                        when (result) {
                             is ResultWrapper.Error -> currentState.copy(
                                 isLoading = false,
                                 errorMessage = result.errorMessage

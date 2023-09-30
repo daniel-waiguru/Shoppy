@@ -49,7 +49,7 @@ fun <T> flowSafeCall(
             val errorResponse = parseErrorBody(throwable)
             emit(
                 ResultWrapper.Error(
-                    errorMessage = errorResponse?.message,
+                    errorMessage = errorResponse?.message
                 )
             )
         }
@@ -74,7 +74,7 @@ fun <T> flowSafeCall(
 
 suspend fun <T> safeApiCall(
     dispatcher: CoroutineDispatcher,
-    apiCall: suspend () -> T,
+    apiCall: suspend () -> T
 ): ResultWrapper<T> {
     return withContext(dispatcher) {
         try {
@@ -104,4 +104,3 @@ suspend fun <T> safeApiCall(
         }
     }
 }
-

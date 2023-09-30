@@ -33,6 +33,8 @@ googleFont = "1.3.2"
 androidxNavigation = "2.5.1"
 shimmer = "0.5.0"
 googleAccompanist = "0.25.0"
+ktlint = "11.5.1"
+spotless = "6.20.0"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -105,6 +107,8 @@ org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.re
 com-android-library = { id = "com.android.library", version.ref = "agp" }
 org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+ktlint = { id = "org.jlleitschuh.gradle.ktlint", version.ref = "ktlint"}
+spotless = { id = "com.diffplug.spotless", version.ref = "spotless"}
 
 [bundles]
 network = ["retrofit-core", "retrofit-moshi-converter", "okhttp-logging"]

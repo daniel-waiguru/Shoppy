@@ -3,10 +3,8 @@ package com.danielwaiguru.shoppy.presentation.features.products.product_details
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.danielwaiguru.shoppy.domain.models.Product
 import com.danielwaiguru.shoppy.domain.repositories.ProductsRepository
 import com.danielwaiguru.shoppy.domain.utils.ResultWrapper
-import com.danielwaiguru.shoppy.presentation.common.ShoppyUIState
 import com.danielwaiguru.shoppy.presentation.features.products.models.ProductCartUIState
 import com.danielwaiguru.shoppy.presentation.utils.PresentationConstants.PRODUCT_ID_ARG_KEY
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -37,7 +35,7 @@ class ProductInfoViewModel @Inject constructor(
         viewModelScope.launch {
             val result = productsRepository.getProduct(productId)
             _productUIState.update { currentState ->
-                when(result) {
+                when (result) {
                     is ResultWrapper.Error -> currentState.copy(
                         isLoading = false,
                         errorMessage = result.errorMessage

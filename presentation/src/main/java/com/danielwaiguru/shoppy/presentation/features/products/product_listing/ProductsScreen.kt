@@ -4,12 +4,10 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -51,6 +49,7 @@ fun ProductsRoute(
             .fillMaxSize()
     )
 }
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun ProductsScreen(
@@ -104,12 +103,10 @@ fun ProductsScreen(
                     ShoppyProgressIndicator(
                         modifier = Modifier
                             .size(60.dp)
-                            .align(Alignment.Center)
-                        ,
+                            .align(Alignment.Center),
                         stockWidth = 2.dp
                     )
                 }
-
             }
             else -> {
                 ProductsGrid(
@@ -122,7 +119,6 @@ fun ProductsScreen(
                 )
             }
         }
-
     }
 }
 

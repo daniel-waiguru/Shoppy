@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.ArrowBack
@@ -32,7 +31,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -89,7 +87,7 @@ fun ProductInfoScreen(
                 title = ""
             )
         },
-        snackbarHost = { SnackbarHost(snackbarHostState)}
+        snackbarHost = { SnackbarHost(snackbarHostState) }
     ) { paddingValues ->
         when {
             state.product != null && state.isLoading.not() -> {
@@ -148,7 +146,6 @@ fun ProductInfoSection(
         modifier = modifier,
         verticalArrangement = Arrangement.SpaceBetween
     ) {
-
         Box(
             modifier = Modifier
                 .background(
@@ -161,9 +158,9 @@ fun ProductInfoSection(
                 contentDescription = product.name,
                 modifier = Modifier
                     .fillMaxHeight(0.50f)
-                    .fillMaxWidth(),
+                    .fillMaxWidth()
 
-                )
+            )
         }
         Column(
             verticalArrangement = Arrangement.SpaceBetween,
@@ -241,7 +238,6 @@ fun ProductInfoSection(
                 )
             }
         }
-
     }
 }
 
@@ -303,9 +299,9 @@ fun QuantitySectionPreview() {
     }
 }
 
-//@ShoppyPreviews
-//@Composable
-//fun ProductInfoScreenPreview() {
+// @ShoppyPreviews
+// @Composable
+// fun ProductInfoScreenPreview() {
 //    ProductInfoScreen(
 //        state = ShoppyUIState(
 //            value = Product(
@@ -322,4 +318,4 @@ fun QuantitySectionPreview() {
 //            .fillMaxSize(),
 //        onNavBack = {}
 //    )
-//}
+// }
