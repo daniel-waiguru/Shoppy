@@ -18,7 +18,6 @@ To inspect network requests, run the app, and [Chucker](https://github.com/Chuck
     * [Moshi Converter](https://github.com/square/retrofit/blob/master/retrofit-converters/moshi/README.md) A JSON serialization converter which uses Moshi
     * [Jetpack](https://developer.android.com/jetpack)
         * [Jetpack Compose](https://developer.android.com/jetpack/compose) - A modern toolkit for building native Android UI
-        * [Room](https://developer.android.com/topic/libraries/architecture/room) - a persistence library that provides an abstraction layer over SQLite.
         * [Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle) - perform actions in response to a change in the lifecycle state.
         * [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) - store and manage UI-related data lifecycle conscious manner and survives configuration change.
     * [Chucker](https://github.com/ChuckerTeam/chucker) An on-device Http inspector for Android and OkHttp.
