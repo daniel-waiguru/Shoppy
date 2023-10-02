@@ -35,6 +35,7 @@ class ProductsRepositoryTest {
             ioDispatcher = UnconfinedTestDispatcher()
         )
     }
+
     @Test
     fun `test network request trigger loading state first`() {
         coEvery {
@@ -70,6 +71,7 @@ class ProductsRepositoryTest {
                 }
         }
     }
+
     @Test
     fun `test retrieving all products returns correctly mapped error`() {
         coEvery {
@@ -95,7 +97,7 @@ class ProductsRepositoryTest {
 
     @Test
     fun `test retrieving one products returns correctly mapped data`() {
-        //Given
+        // Given
         coEvery {
             remoteDataSource.getProductById(any())
         } returns fakeProductResponse
@@ -103,7 +105,7 @@ class ProductsRepositoryTest {
         runTest {
             // When
             val result = productsRepository.getProduct(1)
-            //Then
+            // Then
             Truth.assertThat(result).isInstanceOf(ResultWrapper.Success::class.java)
             Truth.assertThat((result as ResultWrapper.Success).value.id)
                 .isEqualTo(testProductDto().id)
@@ -112,7 +114,7 @@ class ProductsRepositoryTest {
 
     @Test
     fun `test getProductById handles error correctly`() {
-        //Given
+        // Given
         coEvery {
             remoteDataSource.getProductById(any())
         } throws HttpException(
@@ -126,7 +128,7 @@ class ProductsRepositoryTest {
         runTest {
             // When
             val result = productsRepository.getProduct(1)
-            //Then
+            // Then
             Truth.assertThat(result).isInstanceOf(ResultWrapper.Error::class.java)
         }
     }

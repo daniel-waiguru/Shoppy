@@ -2,7 +2,6 @@ package com.danielwaiguru.shoppy.presentation.features.products.product_details
 
 import androidx.lifecycle.SavedStateHandle
 import com.danielwaiguru.shoppy.domain.utils.ResultWrapper
-import com.danielwaiguru.shoppy.presentation.features.products.product_listing.ProductsViewModel
 import com.danielwaiguru.shoppy.testing.base.BaseViewModelTest
 import com.danielwaiguru.shoppy.testing.repositories.TestProductsRepository
 import com.danielwaiguru.shoppy.testing.test_data.notFoundError
@@ -16,7 +15,7 @@ import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 
-class ProductInfoViewModelTest: BaseViewModelTest() {
+class ProductInfoViewModelTest : BaseViewModelTest() {
     private val productsRepository = TestProductsRepository()
     private lateinit var viewModel: ProductInfoViewModel
     private val savedStateHandle = SavedStateHandle()
@@ -28,6 +27,7 @@ class ProductInfoViewModelTest: BaseViewModelTest() {
             savedStateHandle = savedStateHandle
         )
     }
+
     @Test
     fun `test success product retrieval returns success UI state`() = runTest {
         val collectJob = launch(UnconfinedTestDispatcher()) {
@@ -40,6 +40,7 @@ class ProductInfoViewModelTest: BaseViewModelTest() {
         Truth.assertThat(uiState.product).isEqualTo(testProduct())
         collectJob.cancel()
     }
+
     @Test
     fun `test failure product retrieval returns error UI state`() = runTest {
         val collectJob = launch(UnconfinedTestDispatcher()) {
@@ -53,6 +54,7 @@ class ProductInfoViewModelTest: BaseViewModelTest() {
         assertNull(uiState.product)
         collectJob.cancel()
     }
+
     @Test
     fun `test incrementing cart count updates ui state`() = runTest {
         val collectJob = launch(UnconfinedTestDispatcher()) {
@@ -63,6 +65,7 @@ class ProductInfoViewModelTest: BaseViewModelTest() {
         Truth.assertThat(uiState.cartQuantity).isEqualTo(2)
         collectJob.cancel()
     }
+
     @Test
     fun `test decrementing cart count updates ui state`() = runTest {
         val collectJob = launch(UnconfinedTestDispatcher()) {
@@ -75,6 +78,7 @@ class ProductInfoViewModelTest: BaseViewModelTest() {
         Truth.assertThat(uiState.cartQuantity).isEqualTo(2)
         collectJob.cancel()
     }
+
     @Test
     fun `test decrementing cart count cannot reduce below 1`() = runTest {
         val collectJob = launch(UnconfinedTestDispatcher()) {
