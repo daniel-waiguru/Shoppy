@@ -1,0 +1,2 @@
+-keep class com.danielwaiguru.shoppy.data.models.** {*;}
+-dontwarn java.lang.invoke.StringConcatFactory

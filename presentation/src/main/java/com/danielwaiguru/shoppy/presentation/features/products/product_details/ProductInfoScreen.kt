@@ -1,6 +1,8 @@
 package com.danielwaiguru.shoppy.presentation.features.products.product_details
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.gestures.Orientation
+import androidx.compose.foundation.gestures.scrollable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -10,6 +12,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.ArrowBack
@@ -27,6 +30,7 @@ import androidx.compose.material3.SuggestionChipDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
@@ -100,6 +104,7 @@ fun ProductInfoScreen(
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(paddingValues)
+                        .scrollable(rememberScrollState(), Orientation.Vertical)
                 )
             }
 
@@ -142,6 +147,9 @@ fun ProductInfoSection(
     modifier: Modifier = Modifier
 ) {
     val scope = rememberCoroutineScope()
+    val totalCost by remember(product.price, cartQuantity) {
+        mutableIntStateOf(product.price * cartQuantity)
+    }
     Column(
         modifier = modifier,
         verticalArrangement = Arrangement.SpaceBetween
@@ -157,7 +165,7 @@ fun ProductInfoSection(
                 url = product.imageLocation,
                 contentDescription = product.name,
                 modifier = Modifier
-                    .fillMaxHeight(0.50f)
+                    .fillMaxHeight(0.45f)
                     .fillMaxWidth()
 
             )
@@ -168,13 +176,27 @@ fun ProductInfoSection(
                 .padding(horizontal = 16.dp)
                 .weight(1f)
         ) {
-            Text(
-                text = product.name,
-                style = MaterialTheme.typography.headlineLarge.copy(
-                    fontWeight = FontWeight.ExtraBold
-                ),
-                modifier = Modifier.padding(top = 6.dp)
-            )
+            Row(
+                modifier = Modifier.padding(top = 6.dp),
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Absolute.SpaceBetween
+            ) {
+                Text(
+                    text = product.name,
+                    style = MaterialTheme.typography.headlineLarge.copy(
+                        fontWeight = FontWeight.ExtraBold
+                    ),
+                    modifier = Modifier
+                        .weight(1f)
+                )
+                Text(
+                    text = "${product.currencySymbol} $totalCost",
+                    style = MaterialTheme.typography.headlineMedium.copy(
+                        fontWeight = FontWeight.SemiBold
+                    ),
+                    modifier = Modifier.padding(top = 6.dp)
+                )
+            }
             SuggestionChip(
                 onClick = {},
                 label = {

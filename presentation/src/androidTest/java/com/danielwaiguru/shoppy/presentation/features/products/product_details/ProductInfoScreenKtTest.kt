@@ -21,20 +21,23 @@ class ProductInfoScreenKtTest {
         rule.setContent {
             ProductInfoScreen(
                 state = ProductCartUIState(isLoading = true),
-                onNavBack = {  },
+                onNavBack = { },
                 onAddQuantity = { },
-                onSubtractQuantity = {  })
+                onSubtractQuantity = { }
+            )
         }
         rule.onNodeWithTag("shoppy_progress_indicator").assertIsDisplayed()
     }
+
     @Test
     fun error_state_is_handled_by_displaying_error_view() {
         rule.setContent {
             ProductInfoScreen(
                 state = ProductCartUIState(errorMessage = notFoundError),
-                onNavBack = {  },
+                onNavBack = { },
                 onAddQuantity = { },
-                onSubtractQuantity = {  })
+                onSubtractQuantity = { }
+            )
         }
         rule.onNodeWithTag("shoppy_error_view").assertIsDisplayed()
         rule.onNodeWithTag("error_description").assertTextEquals(notFoundError)
@@ -47,9 +50,10 @@ class ProductInfoScreenKtTest {
                 state = ProductCartUIState(
                     product = testProduct()
                 ),
-                onNavBack = {  },
+                onNavBack = { },
                 onAddQuantity = { },
-                onSubtractQuantity = {  })
+                onSubtractQuantity = { }
+            )
         }
         rule.onNodeWithText("Robin Sykes").assertIsDisplayed()
     }

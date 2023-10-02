@@ -25,8 +25,8 @@ fun ProductItem(
     product: Product,
     modifier: Modifier = Modifier
 ) {
-    val priceWithCurrency by remember(product.currencyCode, product.price) {
-        mutableStateOf("${product.currencyCode} ${product.price}")
+    val priceWithCurrency by remember(product.currencySymbol, product.price) {
+        mutableStateOf("${product.currencySymbol} ${product.price}")
     }
     Card(
         modifier = modifier,

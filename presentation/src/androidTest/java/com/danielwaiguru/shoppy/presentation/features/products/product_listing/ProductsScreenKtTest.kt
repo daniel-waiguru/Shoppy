@@ -19,7 +19,8 @@ class ProductsScreenKtTest {
         rule.setContent {
             ProductsScreen(
                 state = ShoppyUIState(
-                    isLoading = true, value = emptyList()
+                    isLoading = true,
+                    value = emptyList()
                 ),
                 onClick = {}
             )
@@ -40,6 +41,7 @@ class ProductsScreenKtTest {
         }
         rule.onNodeWithTag("shoppy_error_view").assertIsDisplayed()
     }
+
     @Test
     fun success_state_is_handled_by_displaying_product_grid() {
         rule.setContent {
@@ -69,5 +71,4 @@ class ProductsScreenKtTest {
         }
         rule.onNodeWithTag("product_item").assertHasClickAction()
     }
-
 }

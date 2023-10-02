@@ -8,12 +8,14 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.update
 
-class TestProductsRepository: ProductsRepository {
+class TestProductsRepository : ProductsRepository {
     private val productsResult = MutableStateFlow<ResultWrapper<List<Product>>>(
-        ResultWrapper.Success(listOf(
-            testProduct(),
-            testProduct(id = 1, quantity = 89, price = 1000)
-        ))
+        ResultWrapper.Success(
+            listOf(
+                testProduct(),
+                testProduct(id = 1, quantity = 89, price = 1000)
+            )
+        )
     )
     private val productResult = MutableStateFlow<ResultWrapper<Product>>(
         ResultWrapper.Success(testProduct())

@@ -7,9 +7,6 @@ import com.danielwaiguru.shoppy.testing.repositories.TestProductsRepository
 import com.danielwaiguru.shoppy.testing.test_data.notFoundError
 import com.google.common.truth.Truth
 import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.drop
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.take
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
@@ -17,7 +14,7 @@ import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 
-class ProductsViewModelTest: BaseViewModelTest() {
+class ProductsViewModelTest : BaseViewModelTest() {
     private val productsRepository = TestProductsRepository()
     private lateinit var viewModel: ProductsViewModel
 
@@ -55,5 +52,4 @@ class ProductsViewModelTest: BaseViewModelTest() {
         Truth.assertThat(uiState.errorMessage).isEqualTo(notFoundError)
         collectJob.cancel()
     }
-
 }

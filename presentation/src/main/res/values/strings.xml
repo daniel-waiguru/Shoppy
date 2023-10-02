@@ -8,7 +8,7 @@
     <string name="products_will_appear_here">Products will appear here</string>
     <string name="no_products_found">No products found!</string>
     <string name="error_getting_products">A error occurred while trying to get products, try again.</string>
-    <string name="instock_placeholder">%d In Stock</string>
+    <string name="instock_placeholder">%d Units In Stock</string>
     <string name="description_title">Description</string>
     <string name="add_to_cart">Add to Cart</string>
     <string name="buy_now">Buy Now</string>

@@ -19,7 +19,7 @@ fun ShoppyNavGraph(
     modifier: Modifier = Modifier,
     startDestination: String = ProductsScreen.route
 ) {
-    val enterTransitionAnimation = slideInHorizontally (
+    val enterTransitionAnimation = slideInHorizontally(
         animationSpec = tween(700),
         initialOffsetX = { it }
     ) + fadeIn()
