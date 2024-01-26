@@ -55,6 +55,7 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":designsystem"))
     implementation(project(":presentation"))
+    debugImplementation(libs.leakcanary.android)
     implementation(libs.core.ktx)
     implementation(libs.timber)
     implementation(libs.lifecycle.runtime.ktx)
