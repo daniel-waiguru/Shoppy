@@ -40,9 +40,6 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.androidxComposeCompiler.get()
-    }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -55,6 +52,7 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":designsystem"))
     implementation(project(":presentation"))
+    debugImplementation(libs.leakcanary.android)
     implementation(libs.core.ktx)
     implementation(libs.timber)
     implementation(libs.lifecycle.runtime.ktx)
