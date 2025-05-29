@@ -18,7 +18,7 @@ internal class ProductsRepositoryImpl @Inject constructor(
     private val remoteDataSource: RemoteDataSource,
     @Dispatcher(DispatcherProvider.IO) private val ioDispatcher: CoroutineDispatcher
 ) : ProductsRepository {
-    override fun getProducts(): Flow<ResultWrapper<List<Product>>> = flowSafeCall(ioDispatcher) {
+    override fun getProducts(): Flow<ResultWrapper<List<Product>>> = flowSafeCall {
         remoteDataSource.getProducts()
             .map(ProductDto::toProduct)
     }
