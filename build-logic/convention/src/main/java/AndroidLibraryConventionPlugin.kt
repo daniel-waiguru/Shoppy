@@ -3,6 +3,7 @@ import com.android.build.api.variant.LibraryAndroidComponentsExtension
 import com.android.build.gradle.LibraryExtension
 import com.danielwaiguru.shoppy.convention.configureKotlinAndroid
 import com.danielwaiguru.shoppy.convention.configurePrintApksTask
+import com.danielwaiguru.shoppy.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalogsExtension
@@ -22,7 +23,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
                 defaultConfig {
-                    targetSdk = 34
+                    targetSdk = libs.findVersion("targetSdk").get().toString().toInt()
                     consumerProguardFiles("consumer-rules.pro")
                 }
             }

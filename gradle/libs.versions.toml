@@ -36,6 +36,9 @@ shimmer = "0.5.0"
 googleAccompanist = "0.32.0"
 ktlint = "11.5.1"
 spotless = "6.21.0"
+minSdk = "21"
+compileSdk = "36"
+targetSdk = "35"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
