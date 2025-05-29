@@ -7,47 +7,35 @@ import com.danielwaiguru.shoppy.domain.repositories.ProductsRepository
 import com.danielwaiguru.shoppy.domain.utils.ResultWrapper
 import com.danielwaiguru.shoppy.presentation.common.ShoppyUIState
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.update
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.flow.stateIn
 import javax.inject.Inject
 
 @HiltViewModel
 class ProductsViewModel @Inject constructor(
     private val productsRepository: ProductsRepository
 ) : ViewModel() {
-    private val _productsUIState: MutableStateFlow<ShoppyUIState<List<Product>>> = MutableStateFlow(
-        ShoppyUIState(value = emptyList())
-    )
-    val productsUIState: StateFlow<ShoppyUIState<List<Product>>> = _productsUIState.asStateFlow()
-    init {
-        getProducts()
-    }
-
-    fun getProducts() {
-        viewModelScope.launch {
-            productsRepository.getProducts()
-                .collect { result ->
-                    _productsUIState.update { currentState ->
-                        when (result) {
-                            is ResultWrapper.Error -> currentState.copy(
-                                isLoading = false,
-                                errorMessage = result.errorMessage
-                            )
-                            ResultWrapper.Loading -> currentState.copy(
-                                isLoading = true,
-                                errorMessage = null
-                            )
-                            is ResultWrapper.Success -> currentState.copy(
-                                isLoading = false,
-                                errorMessage = null,
-                                value = result.value
-                            )
-                        }
-                    }
-                }
-        }
-    }
+    val productsUIState: StateFlow<ShoppyUIState<List<Product>>> = productsRepository
+        .getProducts()
+        .map { result ->
+            when (result) {
+                is ResultWrapper.Error -> ShoppyUIState(
+                    isLoading = false,
+                    errorMessage = result.errorMessage,
+                    value = emptyList()
+                )
+                ResultWrapper.Loading -> ShoppyUIState(
+                    isLoading = true,
+                    errorMessage = null,
+                    value = emptyList()
+                )
+                is ResultWrapper.Success -> ShoppyUIState(
+                    isLoading = false,
+                    errorMessage = null,
+                    value = result.value
+                )
+            }
+        }.stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), ShoppyUIState(value = emptyList(), isLoading = true))
 }

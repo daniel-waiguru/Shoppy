@@ -1,6 +1,5 @@
 package com.danielwaiguru.shoppy.presentation.features.products.product_listing
 
-import app.cash.turbine.test
 import com.danielwaiguru.shoppy.domain.utils.ResultWrapper
 import com.danielwaiguru.shoppy.testing.base.BaseViewModelTest
 import com.danielwaiguru.shoppy.testing.repositories.TestProductsRepository
@@ -10,7 +9,7 @@ import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.runTest
-import org.junit.Assert.*
+import org.junit.Assert.assertFalse
 import org.junit.Before
 import org.junit.Test
 
@@ -30,7 +29,6 @@ class ProductsViewModelTest : BaseViewModelTest() {
         val collectJob = launch(UnconfinedTestDispatcher()) {
             viewModel.productsUIState.collect()
         }
-        viewModel.getProducts()
 
         val uiState = viewModel.productsUIState.value
         assertFalse(uiState.isLoading)

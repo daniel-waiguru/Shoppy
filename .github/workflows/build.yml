@@ -27,14 +27,12 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
-      - name: Run ktlintFormat on the codebase
-        run: ./gradlew ktlintFormat
 
       - name: Run ktlintCheck on the codebase
         run: ./gradlew ktlintCheck
 
       - name: Run Unit Tests
-        run: ./gradlew test
+        run: ./gradlew testDebug
 
       - name: Run debug Build
         run: ./gradlew assembleDebug
