@@ -1,3 +1,5 @@
+import org.jlleitschuh.gradle.ktlint.reporter.ReporterType
+
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 @Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
@@ -18,7 +20,7 @@ allprojects {
         android.set(true)
         ignoreFailures.set(false)
         reporters {
-            org.jlleitschuh.gradle.ktlint.reporter.ReporterType.CHECKSTYLE
+            reporter(ReporterType.JSON)
         }
         filter {
             exclude { element -> element.file.path.contains("generated/") }
