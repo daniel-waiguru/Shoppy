@@ -20,26 +20,3 @@ internal fun Project.configureKotlinJvm() {
 
     configureKotlin()
 }
-
-/**
- * Configure base Kotlin options
- */
-private fun Project.configureKotlin() {
-    // Use withType to workaround https://youtrack.jetbrains.com/issue/KT-55947
-    tasks.withType<KotlinCompile>().configureEach {
-        kotlinOptions {
-            // Set JVM target to 17
-            jvmTarget = JavaVersion.VERSION_17.toString()
-            // Treat all Kotlin warnings as errors (disabled by default)
-            // Override by setting warningsAsErrors=true in your ~/.gradle/gradle.properties
-            val warningsAsErrors: String? by project
-            allWarningsAsErrors = warningsAsErrors.toBoolean()
-            freeCompilerArgs = freeCompilerArgs + listOf(
-                "-opt-in=kotlin.RequiresOptIn",
-                // Enable experimental coroutines APIs, including Flow
-                "-opt-in=kotlinx.coroutines.ExperimentalCoroutinesApi",
-                "-opt-in=kotlinx.coroutines.FlowPreview",
-            )
-        }
-    }
-}
