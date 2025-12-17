@@ -19,6 +19,7 @@ import androidx.compose.material.icons.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.Remove
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
@@ -40,7 +41,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.hilt.lifecycle.viewmodel.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.danielwaiguru.shoppy.designsystem.components.ShoppyAsyncImage
 import com.danielwaiguru.shoppy.designsystem.components.ShoppyPrimaryButton
@@ -209,7 +210,7 @@ fun ProductInfoSection(
                 )
 
             )
-            Divider()
+            HorizontalDivider()
             Text(
                 text = stringResource(id = R.string.description_title),
                 style = MaterialTheme.typography.headlineMedium
@@ -225,7 +226,7 @@ fun ProductInfoSection(
                 modifier = Modifier
                     .padding(vertical = 8.dp)
             )
-            Divider()
+            HorizontalDivider()
             Row(
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically,
